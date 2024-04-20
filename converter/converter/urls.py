@@ -15,10 +15,10 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 # currency_converter/urls.py
-from django.urls import path
-from . import views
+from django.contrib import admin
+from django.urls import path, include
 
 urlpatterns = [
-    path('', views.convertapp, name='convert_currency'),
+    path('admin/', admin.site.urls),
+    path('', include('convertapp.urls')),
 ]
-

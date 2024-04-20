@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import path, include
+from .views import convert_currency
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('currency_converter.urls')),
+    path('', convert_currency, name='convert_currency'),
 ]

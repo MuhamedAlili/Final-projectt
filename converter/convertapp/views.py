@@ -14,11 +14,11 @@ def convert_currency(request):
         
         converted_amount = amount * (CONVERSION_RATES[to_currency] / CONVERSION_RATES[from_currency])
         
-        return render(request, 'currency_converter/result.html', {
+        return render(request, 'result.html', {
             'amount': amount,
             'from_currency': from_currency,
             'to_currency': to_currency,
             'converted_amount': converted_amount,
         })
     else:
-        return render(request, 'currency_converter/converter.html', {'currencies': CONVERSION_RATES.keys()})
+        return render(request, 'convert.html', {'currencies': CONVERSION_RATES.keys()})
