@@ -2,29 +2,33 @@
 <html>
 <head>
     <title>Currency Converter</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h2>Currency Converter</h2>
-    <form method="post">
-        {% csrf_token %}
-        <label for="amount">Amount:</label>
-        <input type="number" id="amount" name="amount" required><br><br>
-        
-        <label for="from_currency">From Currency:</label>
-        <select id="from_currency" name="from_currency">
-            {% for currency in currencies %}
-                <option value="{{ currency }}">{{ currency }}</option>
-            {% endfor %}
-        </select><br><br>
-        
-        <label for="to_currency">To Currency:</label>
-        <select id="to_currency" name="to_currency">
-            {% for currency in currencies %}
-                <option value="{{ currency }}">{{ currency }}</option>
-            {% endfor %}
-        </select><br><br>
-        
-        <input type="submit" value="Convert">
-    </form>
+    <div class="container">
+        <h2>Currency Converter</h2>
+        <form method="post">
+            {% csrf_token %}
+            <label for="amount">Amount:</label>
+            <input type="number" id="amount" name="amount" required><br><br>
+            
+            <label for="from_currency">From Currency:</label>
+            <select id="from_currency" name="from_currency">
+                {% for currency in currencies %}
+                    <option value="{{ currency }}">{{ currency }}</option>
+                {% endfor %}
+            </select><br><br>
+            
+            <label for="to_currency">To Currency:</label>
+            <select id="to_currency" name="to_currency">
+                {% for currency in currencies %}
+                    <option value="{{ currency }}">{{ currency }}</option>
+                {% endfor %}
+            </select><br><br>
+            
+            <input type="submit" value="Convert">
+        </form>
+    </div>
 </body>
 </html>
+
